@@ -67,3 +67,13 @@ Se pueden tener varios Entry Points.
 Output: Es la ruta de salida donde va a generar nuestro bundle con todos nuestros archivos
 especificados como Entry Points empaquetados en uno sólo.
 **************************************************************************************************
+
+-> webpack.config.js
+    es el archivo de configuracion de webpac, donde podemos tener el input, output, mode, etc
+    *vamos a utilizado los modulos de node
+    *los import tienen una sintaxys diferentes
+        variable donde almacenemos en nombre del modulo y de donde lo rquerimos
+        const path = require('path')
+
+->configuraciones personalizadas
+    
