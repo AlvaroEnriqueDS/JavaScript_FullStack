@@ -252,7 +252,61 @@ Es recomendable seguir la metodología de Mobile First: comenzar a diseñar para
 más pequeño e ir creando las media queries para las pantallas más grandes.
 
 
+/////////////////////////////// SASS ////////////////////////////////////////
+https://github.com/teffcode/sass-workshop
+https://sass-lang.com/documentation
+https://sass-lang.com/guide
+http://lesscss.org/
+http://stylus-lang.com/
 
+CON SASS PODEMOS REUTILIZAR EL CODIGO, VARIABLES, HERENCIA, etc
+
+->VARIABLES
+    elementos que tengamos predeterminados como en un lenguaje de programacion
+    se define como:
+        scblanco: white;
+
+->ANIDAMIENTO
+    con el anidamiento podemos tener una clase y dentro de esa tener más estilos. La que esta
+    interna anexa a sus estilos los que estan encima de ella.
+    s define como:
+        .login{
+            font-size: 16px;
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+
+->HERENCIA
+    Si vemos un bloque que esta repetido muchas veces podemos sacarlo en una clase y heredarlo
+    donde lo necesitemos con "@extends".
+    se define como:
+        .flex{
+            display: flex;
+            align-items: center;
+        }
+
+        .header{
+            @extends .flex;
+            //
+            background-color: green;
+        }
+
+->MIXINS
+    con los mixins podemos hacer una reutilizacion de los codigos (como la herancia) pero cambia
+    en algunas cosas como la sintaxis "@mixin".
+    se define como:
+        @mixin flex{
+            display: flex;
+            align-items: center;
+        }
+
+        .header{
+            @include flex;
+            //
+            background-color: green;
+        }
         
      
 
