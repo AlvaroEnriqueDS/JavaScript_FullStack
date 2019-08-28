@@ -1,0 +1,40 @@
+//////////////////////////// WEBPACK //////////////////////////////////////
+Webpack para empaquetar tus dependencias tanto en ambientes de producción como desarrollo.
+
+Webpack es un empaquetador para Javascript y sus amigos. Convierte módulos con dependencias en
+archivos estáticos que los navegadores entienden.
+Nos permite empaquetar, optimizar los diferentes módulos Javascript y sus dependencia en nuestro
+proyecto. Es usado en proyectos basados en Javascript como: React, Vue, Angular entre otros.
+
+*User Experience
+    Se logra con una aplicación que:
+        Funcione
+        Sea rápida
+        Cumpla sus necesidades
+        Se actualice
+        Responda a sus interacciones
+        Producto de calidad
+
+*Developer Experience
+    Escribir aplicaciones de manera eficiente.
+    Tener un código limpio.
+    Aplicar tecnología para resolver sus problemas.
+    Tener un conjunto de reglas y convenciones.
+    Entorno de desarrollo optimizado en productividad.
+
+
+->CONFIGURACIÓN
+    *node.js (clase 10.06)
+    *npm (clase 6.9)
+
+-> ^
+    con esto el package.json actualiza lo que se usa  ala ultima version, para que esto no pase
+        npm install webpack --save --save-exact
+    
+**basicamente cualquier cosa que sirve a la configuracion es una dependencia de desarrollo**
+**esto va en devdepencies**
+
+->webpack-cli
+    comand line interface
+->manipular archivos con webpack
+
