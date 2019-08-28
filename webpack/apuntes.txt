@@ -76,4 +76,5 @@ especificados como Entry Points empaquetados en uno sólo.
         const path = require('path')
 
 ->configuraciones personalizadas
-    
+    se puede levantar la bandera "--config" que me permite mandarle la ruta de la configuracion
+        webpack --config ./external/webpack.config.js
