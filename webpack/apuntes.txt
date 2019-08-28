@@ -1,6 +1,6 @@
 //////////////////////////// WEBPACK //////////////////////////////////////
 Webpack para empaquetar tus dependencias tanto en ambientes de producción como desarrollo.
-
+NOS AYUDA A MANIPULAR LOS ARCHIVOS
 Webpack es un empaquetador para Javascript y sus amigos. Convierte módulos con dependencias en
 archivos estáticos que los navegadores entienden.
 Nos permite empaquetar, optimizar los diferentes módulos Javascript y sus dependencia en nuestro
@@ -36,5 +36,34 @@ proyecto. Es usado en proyectos basados en Javascript como: React, Vue, Angular 
 
 ->webpack-cli
     comand line interface
-->manipular archivos con webpack
+    Es el api que nos ayuda a configurar estos archivos que tenemos que manipular
+    lo recomendable es llamarlo con "npx"
 
+-> mode
+    tenemos
+        development
+        production (default)
+    
+    configurar
+        npx webpack --entry ./index.js --output ./bundle.js --mode development
+
+->manipular archivos con webpack
+    npx webpack --entry ./index.js --output ./bundle.js
+    npx webpack --entry ./index.js --output ./bundle.js --mode development
+
+
+**************************************************************************************************
+Al ir creciendo nuestra configuración de Webpack iremos agregando cada vez más banderas a nuestros
+comandos y terminará como una línea gigante en la terminal. ¿Cómo hacemos que esa línea sea muy
+pequeñita, personalizable y escalable? Por medio de un archivo llamado por defecto
+webpack.config.js.
+
+Este archivo permite importar módulos usando el formato commonJS y recibe por lo menos dos
+configuraciones básicas, un entry y un output.
+
+Entry Point: Es la ruta del archivo principal de nuestra aplicación JS a ser procesado por Webpack.
+Se pueden tener varios Entry Points.
+
+Output: Es la ruta de salida donde va a generar nuestro bundle con todos nuestros archivos
+especificados como Entry Points empaquetados en uno sólo.
+**************************************************************************************************
