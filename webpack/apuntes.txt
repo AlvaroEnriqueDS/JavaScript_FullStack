@@ -67,3 +67,43 @@ Se pueden tener varios Entry Points.
 Output: Es la ruta de salida donde va a generar nuestro bundle con todos nuestros archivos
 especificados como Entry Points empaquetados en uno sólo.
 **************************************************************************************************
+
+-> webpack.config.js
+    es el archivo de configuracion de webpac, donde podemos tener el input, output, mode, etc
+    *vamos a utilizado los modulos de node
+    *los import tienen una sintaxys diferentes
+        variable donde almacenemos en nombre del modulo y de donde lo rquerimos
+        const path = require('path')
+
+->configuraciones personalizadas
+    se puede levantar la bandera "--config" que me permite mandarle la ruta de la configuracion
+        webpack --config ./external/webpack.config.js
+    de esta manera se pueden agregar configuraciones externas para webpack
+
+->multi-entry-Points
+    las multiples entradas de js y multiples salidas en un solo archivo de configuracion
+
+->>>>>>>>>>>>>>>>>LOADERS
+    Los Loaders son la funcionalidad que nos da Webpack para interpretar tipos de archivos no soportados de forma
+     nativa por Javascript.
+    style-loader sirve para inyectar un tag style (el CSS) al DOM de nuestro HTML, mientras que css-loader sólo
+    sirve para interpretar archivos CSS.
+
+
+->Los plugins
+    Los Plugins sirven para extender las capacidades de webpack y dar más poder a los loaders.
+    *npm install mini-css-extract-plugin html-webpack-plugin --save-dev --save--exact
+
+-> como instalar una version especificados
+    npm install --save-dev  mini-css-extract-plugin@0.8.0
+
+->listener
+    npm run build:dev -- -w 
+    O pordrias agregarle directamente al comando de config o mandarle como parametro al script webpack
+
+-> SERVER
+    se necesita
+        npm install -D --save-exact webpack-dev-server
+    package.json
+        webpack-dev-server --config ./webpack-dev-server/webpack.config.js
+
