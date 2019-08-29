@@ -83,4 +83,10 @@ especificados como Entry Points empaquetados en uno sólo.
 ->multi-entry-Points
     las multiples entradas de js y multiples salidas en un solo archivo de configuracion
 
+->>>>>>>>>>>>>>>>>LOADERS
+    Los Loaders son la funcionalidad que nos da Webpack para interpretar tipos de archivos no soportados de forma
+     nativa por Javascript.
+    style-loader sirve para inyectar un tag style (el CSS) al DOM de nuestro HTML, mientras que css-loader sólo
+    sirve para interpretar archivos CSS.
+
 
