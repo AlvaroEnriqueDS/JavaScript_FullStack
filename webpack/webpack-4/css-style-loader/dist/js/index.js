@@ -105,7 +105,7 @@ eval("var content = __webpack_require__(/*! !../../../node_modules/css-loader/di
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/index.css */ \"./css-style-loader/src/css/index.css\");\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_index_css__WEBPACK_IMPORTED_MODULE_0__);\n\n\ndocument.body.innerHTML= 'HOLA MUNDO DESDE WEBPACK'\nconsole.log('hola mundo')\n\n//# sourceURL=webpack:///./css-style-loader/src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/index.css */ \"./css-style-loader/src/css/index.css\");\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_index_css__WEBPACK_IMPORTED_MODULE_0__);\n\n\ndocument.body.innerHTML= '<p> Hola mundo desde WebPack!</p>'\nconsole.log('hola mundo')\n\n//# sourceURL=webpack:///./css-style-loader/src/js/index.js?");
 
 /***/ }),
 

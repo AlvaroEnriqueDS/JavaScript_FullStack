@@ -90,3 +90,9 @@ especificados como Entry Points empaquetados en uno sólo.
     sirve para interpretar archivos CSS.
 
 
+->Los plugins
+    Los Plugins sirven para extender las capacidades de webpack y dar más poder a los loaders.
+    *npm install mini-css-extract-plugin html-webpack-plugin --save-dev --save--exact
+
+-> como instalar una version especificados
+    npm install --save-dev  mini-css-extract-plugin@0.8.0
