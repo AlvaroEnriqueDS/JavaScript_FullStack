@@ -96,3 +96,14 @@ especificados como Entry Points empaquetados en uno sólo.
 
 -> como instalar una version especificados
     npm install --save-dev  mini-css-extract-plugin@0.8.0
+
+->listener
+    npm run build:dev -- -w 
+    O pordrias agregarle directamente al comando de config o mandarle como parametro al script webpack
+
+-> SERVER
+    se necesita
+        npm install -D --save-exact webpack-dev-server
+    package.json
+        webpack-dev-server --config ./webpack-dev-server/webpack.config.js
+
