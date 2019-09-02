@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo | uppercase}}</h1>
+        <h2>{{subtitulo | lowercase}}</h2>
+        <h3>{{reto | capitalize}}</h3>
+        <h3>{{reto | capitalize2}}</h3>
+        <h3>{{reto | capitalize3}}</h3>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script text="text/javascript">
+    let app = new Vue({
+        el: '#app',
+        data: {
+            titulo: "estoy en marte",
+            subtitulo: "NADA, SIGO EN LA TIERRA :(",
+            reto: "soY un RetO"
+        },
+        filters: {
+            uppercase: function(str){
+                return str.toUpperCase()
+            },
+            lowercase: function(str){
+                return str.toLowerCase()
+            },
+            capitalize: function(str){
+                var h
+                h = str[0].toUpperCase()
+                for (i=1; i < str.length; i++) {
+                    h += str[i].toLowerCase()
+                }
+                console.log(h)
+                return h
+            },
+            capitalize2: function (str) {
+                return str.charAt(0).toUpperCase() + str.slice(1)
+            },
+            capitalize3: function (str){
+                return str[0].toUpperCase() + str.substr(1, str.lenght);
+            }
+            
+        }
+    })
+</script>
+</body>
+</html> 

@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <button  @click="ms">MOSTRAR</button>
+        <button  @click="oc">OCULTAR</button>
+        <br>
+        <br>
+        <div v-if="mostrar">
+        <input type="text" name="nombre" placeholder="Ingresa tu nombre" v-model="nombre">
+        <p>Tu nombre en matuscula es: {{nombre | uppercase}}</p>
+
+        <form @submit.prevent="submit" action="" method="post">
+            <h2>¿Cuales son tus cursos favoritos?</h2>
+            <input v-model="cursos" type="checkbox" id="vue" value="vue">
+            <label for="vue">Curso de Vue.js</label>
+
+            <input v-model="cursos" type="checkbox" id="seo" value="seo">
+            <label for="seo">Curso de SEO</label>
+
+            <input v-model="cursos" type="checkbox" id="react" value="react">
+            <label for="react">Curso de REACT</label>
+
+            <input v-model="cursos" type="checkbox" id="go" value="go">
+            <label for="go">Curso de GOLANG</label>
+
+            <button type="submit">ENVIAR</button>
+        </form>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script text="text/javascript">
+    let app = new Vue({
+        el: '#app',
+        data: {
+            nombre: '',
+            mostrar: true,
+            cursos: []
+        },
+        filters:{
+            uppercase: function(str){
+                return str.toUpperCase()
+            }
+        },
+        methods:{
+            ms: function(){
+                this.mostrar = true
+            },
+            oc: function(){
+                this.mostrar = false
+            },
+            submit: function(){
+                console.log('se envio el formulario')
+                console.log(this.cursos)
+            }
+        }
+    })
+</script>
+</body>
+</html> 
