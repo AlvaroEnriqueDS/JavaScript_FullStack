@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    
+    <div id="app">
+        <!--
+        <div v-if="mostrar">
+           <a :href="url" target="_blank">
+                Ir a {{pagina}}
+            </a>
+            <h1> SOY EL H1</h1>
+            <h2> SOY EL H2</h2> 
+        </div>   
+        -->
+        <template v-if="mostrar">
+            <a :href="url" target="_blank">
+                Ir a {{pagina}}
+            </a>
+            <h1> SOY EL H1</h1>
+            <h2> SOY EL H2</h2> 
+        </template>
+        
+        <div v-show="mostrar">
+            <p> esto esta en el v-SHOW</h1> 
+        </div>
+        
+        <div v-show="!mostrar">
+            <p>ESTO ESTABA OCULTO</p>
+        </div>
+        
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script text="text/javascript">
+    let app = new Vue({
+        el: '#app',
+        data: {
+            url: 'https://www.google.com/',
+            pagina: 'Google',
+            mostrar: true
+        }
+    })
+</script>
+</body>
+</html> 

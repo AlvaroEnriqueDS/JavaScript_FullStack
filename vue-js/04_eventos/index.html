@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <!--
+        <button v-on:click="sumar">sumar 1</button>
+        <button v-on:click="restar">Restar 1</button>  
+        -->
+        <button @click="sumar">sumar 1</button>
+        <button @click="restar">Restar 1</button>
+        El contador está en {{contador}}
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script text="text/javascript">
+    let app = new Vue({
+        el: '#app',
+        data: {
+            contador: 0
+        },
+        methods:{
+            sumar: function(){
+                this.contador++
+            },
+            restar: function(){
+                this.contador--
+            }
+        }
+    })
+</script>
+</body>
+</html> 
