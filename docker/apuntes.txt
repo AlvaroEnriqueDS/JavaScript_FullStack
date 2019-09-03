@@ -27,3 +27,40 @@
     Debemos redirigir los puertos del contenedor a los de la computadora y lo podemos
     hacer al utilizar este comando:
         docker run -d --name server -p 8080:80 nombreDelContenedor
+
+//DATOS EN Docker 
+    ->MOUNTS
+        Sudo docker run -d --name mongodb_prueba mongo 
+        docker exec -it db  bash
+
+        con esto podemos guardar data en una carpeta y consta en montar esta data
+        al contenedor.
+
+        sudo docker run -d -v /USer/alvaro/platzi/prueba:/data/db --name mongodb_prueba mongo
+
+    ->VOLUMS
+        A pesar de que no es lo más divertido que tiene Docker, esta herramienta
+        nos permite recuperar datos que podíamos dar por perdido.
+
+        Existen tres maneras de hacer permanencia de datos:
+
+            Bind mount
+            Volume
+            tmpfs mount
+
+        *dokcer vlume prune
+
+        *docker volume create nombreDelVolumen
+        *docker volum ls
+        *docker run -d --name nombrE --mount src=nombreDelVolumen,dst=/RUTA/ruta mongo
+
+
+//IMAGENES
+    Las imágenes son un componente fundamental de Docker y sin ellas los contenedores
+    no tendrían sentido. Estas imágenes son fundamentalmente plantillas o templates.
+    Algo que debemos tener en cuenta es que las imágenes no van a cambiar, es decir,
+    una vez este realizada no la podremos cambiar.
+
+    *docker pull redis
+    *docker image ls
+     ************** docker pull ubuntu:1804 *****************
