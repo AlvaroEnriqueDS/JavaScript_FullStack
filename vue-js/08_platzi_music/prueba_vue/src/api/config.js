@@ -1,6 +1,6 @@
 export default {
     appname: 'pruebavue',
-    apikey: '2839aa7bc52ca7fe9843d94dbb33e77c',
+    apiKey: '2839aa7bc52ca7fe9843d94dbb33e77c',
     secret: '3df8742698fffdc81e0e740152ba24fa',
     registeredTo: 'alvaroenriqueds'
 }

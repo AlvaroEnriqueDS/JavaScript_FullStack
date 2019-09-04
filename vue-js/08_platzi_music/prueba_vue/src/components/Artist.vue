@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <ul>
-      <li v-for="(artist) in artists"  v-bind:key="artist">
+      <li v-for="artist in artists"  v-bind:artist="artist">
         {{artist.name}}
       </li>
     </ul>
@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import getArtist from '../api'
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -18,13 +20,21 @@ export default {
   },
   data () {
     return {
-      artists: [
-      {name: 'Aracely'},
-      {name: 'Keiko'},
-      {name: 'Isaura'},
-      {name: 'Alvaro'}
-  ]
+      // artists: [
+      // {name: 'Aracely'},
+      // {name: 'Keiko'},
+      // {name: 'Isaura'},
+      // {name: 'Alvaro'}
+      // ]
+      artists: []
     }
+  },
+  mounted: function(){
+    const self = this
+    getArtist()
+      .then(function (artists){
+      self.artists = artists
+    })
   }
 }
 </script>
