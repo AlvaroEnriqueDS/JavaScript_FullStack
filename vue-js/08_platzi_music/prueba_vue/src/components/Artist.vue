@@ -13,7 +13,7 @@
 import getArtist from '../api'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Artist',
   props: {
     msg: String,
     hola: String
