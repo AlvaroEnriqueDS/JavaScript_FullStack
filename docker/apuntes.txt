@@ -64,3 +64,29 @@
     *docker pull redis
     *docker image ls
      ************** docker pull ubuntu:1804 *****************
+
+//CREAR TUS PROPIAS IMAGANES
+    Vamos a crear nuestras propias imágenes, necesitamos un archivo llamado DockerFile que
+    es la ““receta”” que utiliza Docker para crear imágenes.
+
+    *Es importante que el DockerFile siempre empiece con un ““FROM”” sino, no va a funcionar.*
+
+    **DockerFile**
+    **************************
+    FROM ubuntu
+
+    RUN touch /usr/src/hola-platzi
+    **************************
+
+    El flujo para construir en Docker siempre es así:
+        *Dockerfile – **build **–> Imágen – run --> Contenedor
+        *docker build -t ubuntu:platzi .
+
+//SISTEMA DE CAPAAAAAAAAAAAAAAAAAAAAAAAASSSSSSSSS///////////////////////
+ASDSAD          SADSADSADSADSA
+ASDSAD      SDASDF          DSADSAD 
+
+SADSAD          DSAD                        DSADSDSA
+//////////////////////////////////////////////////////////////////////////
+
+
