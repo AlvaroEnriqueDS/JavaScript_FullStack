@@ -4,6 +4,12 @@
     <ul>
       <li v-for="artist in artists"  v-bind:artist="artist">
         {{artist.name}}
+
+        <h2>
+          <a v-bind:href="{{artist.url}}" target="_blank"></a>
+          {{artist.name}}
+          <img v-bind:src="artist.image[2]['#text']"></img>
+        </h2>
       </li>
     </ul>
   </div>
@@ -16,25 +22,7 @@ export default {
   name: 'Artist',
   props: {
     msg: String,
-    hola: String
-  },
-  data () {
-    return {
-      // artists: [
-      // {name: 'Aracely'},
-      // {name: 'Keiko'},
-      // {name: 'Isaura'},
-      // {name: 'Alvaro'}
-      // ]
-      artists: []
-    }
-  },
-  mounted: function(){
-    const self = this
-    getArtist()
-      .then(function (artists){
-      self.artists = artists
-    })
+    artist: String
   }
 }
 </script>
