@@ -10,8 +10,26 @@ import Artist from './components/Artist.vue'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      // artists: [
+      // {name: 'Aracely'},
+      // {name: 'Keiko'},
+      // {name: 'Isaura'},
+      // {name: 'Alvaro'}
+      // ]
+      artists: []
+    }
+  },
   components: {
     Artist
+  },
+  mounted: function(){
+    const self = this
+    getArtist()
+      .then(function (artists){
+      self.artists = artists
+    })
   }
 }
 </script>
