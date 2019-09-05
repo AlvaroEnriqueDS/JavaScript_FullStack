@@ -1,12 +1,16 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <Artist msg="Hola Mundo desde vue.js"/>
+    <h1>Practicas con  VUE</h1>
+    <ul>
+      <Artist v-for="artist in artists" v-bind:artist="artist" v-bind:key="artist.mbid"/>
+    </ul>
   </div>
 </template>
 
 <script>
 import Artist from './components/Artist.vue'
+import getArtists from './api'
 
 export default {
   name: 'app',
@@ -24,12 +28,12 @@ export default {
   components: {
     Artist
   },
-  mounted: function(){
+  mounted: function () {
     const self = this
-    getArtist()
-      .then(function (artists){
-      self.artists = artists
-    })
+    getArtists()
+      .then(function (artists) {
+        self.artists = artists
+      })
   }
 }
 </script>

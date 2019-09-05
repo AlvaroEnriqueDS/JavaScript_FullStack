@@ -1,28 +1,17 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <ul>
-      <li v-for="artist in artists"  v-bind:artist="artist">
-        {{artist.name}}
-
-        <h2>
-          <a v-bind:href="{{artist.url}}" target="_blank"></a>
-          {{artist.name}}
-          <img v-bind:src="artist.image[2]['#text']"></img>
-        </h2>
-      </li>
-    </ul>
-  </div>
+  <li>
+    <h2>
+      <a v-bind:href="artist.url" target="_blank">{{artist.name}}</a>
+    </h2>
+    <img v-bind:src="artist.image[2]['#text']">
+  </li>
 </template>
 
 <script>
-import getArtist from '../api'
-
 export default {
   name: 'Artist',
   props: {
-    msg: String,
-    artist: String
+    artist: []
   }
 }
 </script>
