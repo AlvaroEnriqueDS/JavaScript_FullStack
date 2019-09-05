@@ -2,6 +2,14 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>Practicas con  VUE</h1>
+    <select v-model="selectedCountry">
+      <option v-for="country in countries" v-bind:value="country.value" v-bind:key="country.value" >
+        {{ country.name }}
+      </option>
+    </select>
+    <Spinner v-show="loading">
+
+    </Spinner>
     <ul>
       <Artist v-for="artist in artists" v-bind:artist="artist" v-bind:key="artist.mbid"/>
     </ul>
@@ -10,6 +18,7 @@
 
 <script>
 import Artist from './components/Artist.vue'
+import Spinner from './components/Spinner.vue'
 import getArtists from './api'
 
 export default {
@@ -22,18 +31,40 @@ export default {
       // {name: 'Isaura'},
       // {name: 'Alvaro'}
       // ]
-      artists: []
+      artists: [],
+      countries: [
+        { name: 'Argentina', value: 'argentina' },
+        { name: 'Colombia', value: 'colombia' },
+        { name: 'España', value: 'spain' },
+        { name: 'Peru', value: 'peru' }
+      ],
+      selectedCountry: 'argentina',
+      loading: true
     }
   },
   components: {
-    Artist
+    Artist,
+    Spinner
+  },
+  methods: {
+    refreshArtists() {
+      const self = this
+      this.loading = true
+      this.artists = []
+      getArtists(this.selectedCountry)
+        .then(function (artists) {
+          self.loading= false
+          self.artists = artists
+        })
+    }
   },
   mounted: function () {
-    const self = this
-    getArtists()
-      .then(function (artists) {
-        self.artists = artists
-      })
+    this.refreshArtists()
+  },
+  watch: {
+    selectedCountry() {
+      this.refreshArtists()
+    }
   }
 }
 </script>
