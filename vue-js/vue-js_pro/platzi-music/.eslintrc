@@ -1,0 +1,7 @@
+{
+  "extends": ["plugin:vue/base"],
+
+  "rules": {
+    "no-new": 0
+  }
+}
