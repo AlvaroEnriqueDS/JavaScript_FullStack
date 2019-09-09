@@ -70,7 +70,7 @@ representar en pantalla valores de nuestro Vue Model.
     <input v-model='lastname'>
     <p>{{ fullname }}</p>
 
-    computed (){
+    computed: {
         fullname () {
             return this.name + ' ' + this.lastname
                 o
@@ -84,6 +84,29 @@ representar en pantalla valores de nuestro Vue Model.
     A diferencia de las Computed Properties no devuelven un valor, no son propiedades
     y tampoco pueden ser utilizadas en expresiones.
 
+    watch: {
+        //estos se enlazan directamente sobre una variable de el vue model
+        name (newVal, oldVal) {
+            console.log((newVal, oldVal)
+        }
+    }
+    //un uso comun sería desencadenar una llamada en http
+
+-> Eventos o metodos
+    Los Eventos tanto como los inputs son la manera que el usuario tiene para
+    interactuar con nuestra aplicación.
+
+    methods: {      
+        //los metodos no siempre estan ligadas a un evento
+        format() {
+            //
+            this.formatedName = this.name.split(' ').join('-').toUpperCase()
+        }
+    }
+
+    <input v-model="name">
+    <button  v-on:clic="format"> Format </button>
+    <p> {{ formatedName }} </p> -|||||||
     
 
 

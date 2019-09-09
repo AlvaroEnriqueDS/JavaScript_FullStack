@@ -1,25 +1,49 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <div class="row">
-      <form action="">
-        <input type="text" name="nombre" placeholder="Nombre">
-        <input type="text" name="apellido" placeholder="Apellido">
-        <input type="text" name="cargo" placeholder="Cargo">
-        <input type="submit" name="submit" value="Enviar">
+    <section class="section">
+      <nav class="nav has-shadow">
+        <div class="container">
+          <input type="text" class="input is-large" placeholder="Buscar Canciones" v-model="searchQuery">
+          <a class="button is-info is-large" @click="search" target="_blank">Buscar</a>
+          <a href="" class="button is-danger is-large">&times;</a>
+          <p>{{ searchMessage }}</p>
+        </div>
+      </nav>
 
-      </form>
-    </div>
+      <div class="container results">
+        <div class="columns">
+          <div class="column" v-for="t in tracks">
+            {{ t.name }} - {{ t.artist }}
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
+const tracks = [
+  {name: 'Tamo bien', artist: 'Bad Bunny'},
+  {name: 'By my Own', artist: 'Robot'},
+  {name: 'Hey shorty!', artist: 'Rels B'}
+]
+
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Registro estación Platzi'
+      searchQuery: '',
+      tracks: []
+    }
+  },
+  methods: {
+    search() {
+      this.tracks = tracks
+    }
+  },
+  computed: {
+    searchMessage() {
+      return `Encontrados: ${this.tracks.length}`
     }
   }
 }
@@ -27,6 +51,9 @@ export default {
 
 <style lang="scss">
 @import './scss/main.scss';
+.results {
+  margin-top: 50px;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
