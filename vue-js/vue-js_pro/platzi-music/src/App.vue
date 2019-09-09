@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <pmHeader></pmHeader>
     <section class="section">
       <nav class="nav has-shadow">
         <div class="container">
@@ -9,20 +10,27 @@
           <p>{{ searchMessage }}</p>
         </div>
       </nav>
-
-      <div class="container results">
-        <div class="columns">
-          <div class="column" v-for="t in tracks">
-            {{ t.name }} - {{ t.artists[0].name }}
+      <pmLoader v-show="isLoading"></pmLoader>
+      <div class="container results" v-show="!isLoading">
+        <div class="columns is-multiline">
+          <div class="column is-one-quarter" v-for="t in tracks">
+            <pmTrack v-bind:track="t"> </pmTrack>
           </div>
         </div>
       </div>
     </section>
+
+    <pmfooter></pmfooter>
   </div>
 </template>
 
 <script>
-import trackService from './services/track'
+import trackService from '@/services/track'
+import pmfooter from '@/components/layout/Fotter.vue'
+import pmHeader from '@/components/layout/Header.vue'
+
+import pmTrack from '@/components/Track.vue'
+import pmLoader from '@/components/shared/Loader.vue'
 /*
 const tracks = [
   {name: 'Tamo bien', artist: 'Bad Bunny'},
@@ -32,10 +40,19 @@ const tracks = [
 */
 export default {
   name: 'app',
+
+  components: {
+    pmfooter,
+    pmHeader,
+    pmTrack,
+    pmLoader
+  },
   data () {
     return {
       searchQuery: '',
-      tracks: []
+      tracks: [],
+
+      isLoading: false
     }
   },
   methods: {
@@ -44,9 +61,12 @@ export default {
      //if(this.searchQuery === '') {return}
      if(!this.searchQuery) {return}
 
+      this.isLoading = true
+
      trackService.search(this.searchQuery)
       .then(res => {
         this.tracks = res.tracks.items
+        this.isLoading = false
       })
     }
   },
@@ -54,6 +74,13 @@ export default {
     searchMessage() {
       return `Encontrados: ${this.tracks.length}`
     }
+  },
+  //
+  created() {
+    console.log('created...')
+  },
+  mounted() {
+    console.log('mounted...')
   }
 }
 </script>
@@ -71,27 +98,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
-h1, h2 {
-  font-weight: normal;
-}
-
 .row {
   display: flex;
   flex-flow:column wrap;
   align-content:center;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
 }
 </style>
