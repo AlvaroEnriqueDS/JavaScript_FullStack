@@ -27,8 +27,8 @@
         <small>{{ track.duration_ms }}</small>
         <nav class="level">
           <div class="level-left">
-            <a href="" class="level-item">
-              <span class="icon is-small">ᐈ</span>
+            <a class="level-item">
+              <span class="icon is-small" @click="selectTrack">ᐈ</span>
             </a>
           </div>
         </nav>
@@ -41,9 +41,14 @@
 <script>
   export default {
     //name: 'Track',
-
     props: {
       track: {type: Object, required: true}
+    },
+    methods: {
+      //SE EMITEN EVENTOS PARA QUE UN PADRE LOS ESCUCHE
+      selectTrack() {
+        this.$emit('select', this.track.id)
+      }
     }
   }
 </script>
