@@ -13,7 +13,7 @@
       <div class="container results">
         <div class="columns">
           <div class="column" v-for="t in tracks">
-            {{ t.name }} - {{ t.artist }}
+            {{ t.name }} - {{ t.artists[0].name }}
           </div>
         </div>
       </div>
@@ -22,12 +22,14 @@
 </template>
 
 <script>
+import trackService from './services/track'
+/*
 const tracks = [
   {name: 'Tamo bien', artist: 'Bad Bunny'},
   {name: 'By my Own', artist: 'Robot'},
   {name: 'Hey shorty!', artist: 'Rels B'}
 ]
-
+*/
 export default {
   name: 'app',
   data () {
@@ -38,7 +40,14 @@ export default {
   },
   methods: {
     search() {
-      this.tracks = tracks
+     // this.tracks = tracks
+     //if(this.searchQuery === '') {return}
+     if(!this.searchQuery) {return}
+
+     trackService.search(this.searchQuery)
+      .then(res => {
+        this.tracks = res.tracks.items
+      })
     }
   },
   computed: {
