@@ -11,7 +11,8 @@
           </div>
 
           <div class="nav-right nav-menu">
-
+            <router-link to="/" class="nav-item">Buscar</router-link>
+            <router-link to="about"  class="nav-item">Nosotros</router-link>
           </div>
 
         </div>
