@@ -1,0 +1,92 @@
+//EL DOOOOOOOOOOOM
+-> Expresiones
+Las expresiones son esos parámetros que ponemos entre llaves dentro de nuestro HTML y nos permiten 
+representar en pantalla valores de nuestro Vue Model.
+    {{ 1 +1 }}
+    {{ msg }}
+    {{ 'Hola + 'Mundo }}
+    {{ person.name }}
+    {{ person.name.toUpperCase() }}
+    {{ JSON.stringify(person) }}
+    {{ true ? 'true' : 'false' }}
+
+-> Directivas
+    Las Directivas son pequeños marcadores o atributos que podemos agregar a nuestros elementos
+    HTML que nos sirven para aplicar transformaciones en esos mismos elementos.
+
+    v-show -> nos permite ocultar o mostrar elementos
+                mediante un valor boleano
+                v-show = "mostrar"
+    
+    v-if -> nos permite eliminar o montar un elementro
+            mediante un balor boleano
+                v-if="mostrar"
+
+    v-else-if -> nos permite encadenar en secuencia
+                la misma logica que tomaria en un lenguaje
+                v-else-if="mostrar"
+
+    v-else -> siguiendo la secuencia, se puede
+                v-else
+    
+    v-for -> nos permite recorrer un array
+                v-for="ini in inicio"
+
+-> Data Biding
+    Data Binding implica que podamos enlazar datos desde nuestra vista a nuestro código y
+    desde nuestro código a nuestra vista. Esto quiere decir que cada vez que algo se cambie
+    en el código, va a reflejarse automáticamente en la vista, gracias al concepto de
+    reactividad, pero también cada vez que el usuario busca algún dato en un campo de texto
+    o interactue con otros sitios a través de eventos también vamos a poder ver reflejados esos
+    cambios en el código.
+
+    v-model -> Nos permite enlazar campos con nustras propiedades
+                vue
+                <input v-model='name'>
+                <p>{{ name }}</p>
+
+                data (){
+                    return {
+                        name: ''
+                    }
+                }
+
+    v-bind -> Es una directiva que nos permite enlazar
+                cualquier elemento HTML con cialuiera de
+                las propiedades del vue model (:)
+
+            <a v-bind:href="url"> Link </a>
+
+            return {
+                url: 'www.sadsasd.com'
+            }
+
+-> Computed properties
+    Computed Properties son propiedades que se calculan a partir de los valores de 
+    otras propiedades, esto quiere decir que podemos crear propiedades dinámicas que 
+    van a ser regeneradas cada vez que otras propiedades cambien su valor.
+
+    <input v-model='name'>
+    <input v-model='lastname'>
+    <p>{{ fullname }}</p>
+
+    computed (){
+        fullname () {
+            return this.name + ' ' + this.lastname
+                o
+            return `${this.name} ${this.lastname}`
+        }
+    }
+
+-> Watchers
+    Los Watchers nos permiten ejecutar código a partir de que una propiedad de
+    nuestro View Model cambia.
+    A diferencia de las Computed Properties no devuelven un valor, no son propiedades
+    y tampoco pueden ser utilizadas en expresiones.
+
+    
+
+
+
+
+
