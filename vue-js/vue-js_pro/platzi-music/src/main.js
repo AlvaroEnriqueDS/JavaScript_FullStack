@@ -3,7 +3,6 @@ import App from './App.vue'
 import vueRouter from 'vue-router'
 
 import routes from '@/routes'
-import VueRouter from 'vue-router';
 
 Vue.use(vueRouter)
 
