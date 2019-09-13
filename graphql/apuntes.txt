@@ -1,0 +1,1 @@
+mongodb+srv://alvaro:<password>@cluster0-qi8nn.gcp.mongodb.net/test?retryWrites=true&w=majority
